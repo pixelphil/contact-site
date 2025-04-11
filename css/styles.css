@@ -1,0 +1,160 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --desktop-padding: 5rem 7rem;
+    --tablet-padding: 3.4rem;
+    --mobile-padding: 1.8rem;
+    --body-font-color: #181818;
+    --anchor-color: #E6145D;
+    --accent-color: #129FCA;
+}
+
+body {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 16px;
+    color: var(--body-font-color);
+    background-color: #f8f8f8;
+}
+
+::selection {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+header, main, footer {
+    padding: var(--desktop-padding);
+}
+
+header {
+    width: 100%;
+}
+
+header .logo {
+    max-width: 160px;
+}
+
+main p {
+    font-size: clamp(1rem, 3vw, 3rem);
+    line-height: clamp(1.5rem, 6vw, 4rem);
+    max-width: 75%;
+    margin-bottom: 3.5rem;
+}
+
+main a {
+    color: var(--anchor-color);
+    font-weight: bold;
+    text-decoration: underline; 
+    text-decoration-thickness: 12%;
+}
+
+.main-content {
+    margin-bottom: 6rem;
+}
+
+.form-wrapper {
+    margin-top: 40px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.form-wrapper form {
+    max-width: 75%;
+    border: 6px solid var(--body-font-color);
+    padding: 2.3rem;
+}
+
+.form-wrapper.open {
+    max-height: 100%;
+}
+
+.form-block {
+    margin-bottom: 2rem;
+}
+
+label {
+    font-size: clamp(1rem, 3vw, 2.5rem);
+    line-height: clamp(1.5rem, 6vw, 4rem);
+}
+
+input[type="email"], textarea {
+    border: 6px solid #181818;
+    font-size: 24px;
+    padding: 8px 11px;
+    width: 100%;
+    background-color: #f8f8f8;
+}
+
+button {
+    background-color: var(--anchor-color);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 4px solid var(--anchor-color);
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: var(--anchor-color);
+}
+
+input[type="email"]:focus, textarea:focus {
+    outline: 5px solid #14B5E6;
+}
+
+#toggle-form {
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    header, main, footer {
+        padding: var(--tablet-padding);
+    }    
+}
+
+@media (max-width: 768px) {
+    header, main, footer {
+        padding: var(--mobile-padding);
+    }    
+
+    header .logo {
+        max-width: 120px;
+    }
+    
+    .main-content {
+        margin-bottom: 3rem;
+    }
+
+    main p {
+            font-size: clamp(1rem, 5vw, 1.5rem);
+            line-height: clamp(1.5rem, 8vw, 4rem);
+            max-width: 100%;
+            margin-bottom: 2rem;
+    }
+
+    .form-wrapper form {
+        max-width: 100%;
+        border-width: 4px;
+        padding: 1.4rem;
+    }
+
+    .form-block {
+        margin-bottom: 1.2rem;
+    }
+
+    label {
+        font-size: 24px;
+    }
+
+    input[type="email"], textarea {
+        border-width: 4px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px 12px;
+    }
+}
