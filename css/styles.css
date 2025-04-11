@@ -56,7 +56,7 @@ main a {
     margin-top: 40px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
+    transition: max-height .2s ease-in-out;
 }
 
 .form-wrapper form {
@@ -66,7 +66,7 @@ main a {
 }
 
 .form-wrapper.open {
-    max-height: 100%;
+    max-height: 1000px;
 }
 
 .form-block {
